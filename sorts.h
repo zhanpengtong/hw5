@@ -13,7 +13,16 @@
 // Output: The index in an array of the minimum value between a range [start,stop]
 int findMinimum(int *array, int start, int stop)
 {
-    return 0; // modify to return the index of the min value
+    int minIndex = start;
+    int i;
+    for (i = start + 1; i < stop; i++){
+        if (array[i] < array[minIndex])
+        {
+            minIndex = i;
+        }
+        
+    }
+    return minIndex;
 }
 
 
