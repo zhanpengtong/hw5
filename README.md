@@ -1,21 +1,23 @@
 # Homework 05 README
 
-Name:
+Name: Zhanpeng Tong
 
-Github Account name: 
+Github Account name: zhanpengtong
 
-URL to your Homework 05 Repo: 
+URL to your Homework 05 Repo: https://github.com/zhanpengtong/hw5.git
 
 ---
 
-How many hours did it take you to complete this assignment (estimate)? 
+How many hours did it take you to complete this assignment (estimate)?  5 hours.
 
 Did you collaborate with any other students/TAs/Professors? If so, tell us who and in what capacity.  
 - one per row, add more if needed
+Nope
 
 
 Did you use any external resources (you do not have to cite in class material)? (Cite them below)  
 - one row per resource
+Nope
 
 
 (Optional) What was your favorite part of the assignment? 
