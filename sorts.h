@@ -39,7 +39,21 @@ int findMinimum(int *array, int start, int stop)
 // Output: No value is returned, but 'array' should be modified to store a sorted array of numbers.
 void selectionSortIntegers(int *array, unsigned int size, int print)
 {
-    // todo: implement selection sort
+    int i;
+    for (i = 0; i < size - 1; i++) {
+        int minIndex = findMinimum(array, i, size);
+        // Swap the smallest element with the first element in the unsorted part of the array
+        int temp = array[i];
+        array[i] = array[minIndex];
+        array[minIndex] = temp;
+        if (print == 1) {
+            int j;
+            for ( j = 0; j < size; j++) {
+                printf("%d ", array[j]);
+            }
+            printf("\n");
+        }
+    }
 }
 
 /***  Code for Insertion Sort ***/
@@ -57,9 +71,30 @@ void selectionSortIntegers(int *array, unsigned int size, int print)
 // Output: No value is returned, but 'array' should be modified to store a sorted array of numbers.
 void insertionSortIntegers(int *array, unsigned int size, int print)
 {
-    // TODO: Implement insertion sort
- 
+    int i;
 
+    for (i = 1; i < size; i++)
+    {
+        int k;
+        for ( k = i; k >= 1; k--)
+        {
+            if (array[k] < array[k-1])
+            {
+                int temp = array[k];
+                array[k] = array[k-1];
+                array[k-1] = temp;
+            }
+        }
+        
+        if (print == 1) {
+            int j;
+            for ( j = 0; j < size; j++) {
+                printf("%d ", array[j]);
+            }
+            printf("\n");
+        }
+    }
+ 
 }
 
 /** Code for Bubble Sort (from Lab -if not compiling, comment out the internals, but leave the function definition) ***/
@@ -77,7 +112,30 @@ void insertionSortIntegers(int *array, unsigned int size, int print)
 //           be modified to store a sorted array of size.
 void bubbleSortIntegers(int *array, unsigned int size, int print)
 {
-    // code generated from lab
+    /**
+    for (unsigned int i = 0; i < size - 1; i++)
+    {
+        // iterate over the remaining unsorted elements
+        for (unsigned int j = 0; j < size - i - 1; j++)
+        {
+            // swap adjacent elements if they are in the wrong order
+            if (array[j] > array[j + 1])
+            {
+                int temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
+        }
+
+        if (print == 1) {
+            int j;
+            for ( j = 0; j < size; j++) {
+                printf("%d ", array[j]);
+            }
+            printf("\n");
+        }
+    }
+    */
 
 }
 
@@ -93,9 +151,48 @@ void merge(int arr[], int temp[], int l, int m, int r)
         exit(1);
     }
 
-    if (l > m || m + 1 > r)
-        return;
+    int i, j, k;
 
+    // Copy data to temp arrays
+    for (i = l; i <= r; i++)
+    {
+        temp[i] = arr[i];
+    }
+
+    i = l; // Initial index of first subarray
+    j = m + 1; // Initial index of second subarray
+    k = l; // Initial index of merged subarray
+
+    // Merge the temp arrays back into arr[l..r]
+    while (i <= m && j <= r)
+    {
+        if (temp[i] <= temp[j])
+        {
+            arr[k] = temp[i];
+            i++;
+        }
+        else
+        {
+            arr[k] = temp[j];
+            j++;
+        }
+        k++;
+    }
+    // Copy the remaining elements of left subarray
+    while (i <= m)
+    {
+        arr[k] = temp[i];
+        k++;
+        i++;
+    }
+
+    // Copy the remaining elements of right subarray
+    while (j <= r)
+    {
+        arr[k] = temp[j];
+        k++;
+        j++;
+    }
 
 }
 
