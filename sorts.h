@@ -151,49 +151,42 @@ void merge(int arr[], int temp[], int l, int m, int r)
         exit(1);
     }
 
-    int i, j, k;
+    if (l > m || m + 1 > r)
+        return;
 
-    // Copy data to temp arrays
-    for (i = l; i <= r; i++)
-    {
-        temp[i] = arr[i];
-    }
-
-    i = l; // Initial index of first subarray
-    j = m + 1; // Initial index of second subarray
-    k = l; // Initial index of merged subarray
-
-    // Merge the temp arrays back into arr[l..r]
-    while (i <= m && j <= r)
-    {
-        if (temp[i] <= temp[j])
+    int i = l;
+    int j = m + 1;
+    int start;
+    for (start = l; start <= r; start++ ){
+        if (arr[i] <= arr[j] && i <= m)
         {
-            arr[k] = temp[i];
-            i++;
+            temp[start] = arr[i];
+            i = i + 1;
         }
-        else
+        else if (arr[j] < arr[i] && j <= r && i <= m)
         {
-            arr[k] = temp[j];
-            j++;
+            temp[start] = arr[j];
+            j = j + 1;
         }
-        k++;
+        else if (i > m)
+        {
+            temp[start] = arr[j];
+            j = j + 1;
+        }
+        else if (j > r)
+        {
+            temp[start] = arr[i];
+            i = i + 1;
+        }
+        
     }
-    // Copy the remaining elements of left subarray
-    while (i <= m)
+    int k;
+    for (k = l; k <= r; k++)
     {
-        arr[k] = temp[i];
-        k++;
-        i++;
+        arr[k] = temp[k];
     }
-
-    // Copy the remaining elements of right subarray
-    while (j <= r)
-    {
-        arr[k] = temp[j];
-        k++;
-        j++;
-    }
-
+    
+  
 }
 
 // To be built during week 6 lab
