@@ -112,30 +112,18 @@ void insertionSortIntegers(int *array, unsigned int size, int print)
 //           be modified to store a sorted array of size.
 void bubbleSortIntegers(int *array, unsigned int size, int print)
 {
-    /**
-    for (unsigned int i = 0; i < size - 1; i++)
-    {
-        // iterate over the remaining unsorted elements
-        for (unsigned int j = 0; j < size - i - 1; j++)
-        {
-            // swap adjacent elements if they are in the wrong order
-            if (array[j] > array[j + 1])
-            {
-                int temp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = temp;
-            }
-        }
-
-        if (print == 1) {
-            int j;
-            for ( j = 0; j < size; j++) {
-                printf("%d ", array[j]);
-            }
-            printf("\n");
+   int i, j;
+   for (i = 0; i < size - 1; i++) {
+    for (j = 0; j < size - 1; j++) {
+        if (array[j] > array[j + 1]) {
+            swap(&array[j], &array[j + 1]);
         }
     }
-    */
+
+    if (print == 1) {
+        printIntArray(array, size);
+    }
+   }
 
 }
 
@@ -154,31 +142,26 @@ void merge(int arr[], int temp[], int l, int m, int r)
     if (l > m || m + 1 > r)
         return;
 
-    int i = l;
-    int j = m + 1;
-    int start;
-    for (start = l; start <= r; start++ ){
-        if (arr[i] <= arr[j] && i <= m)
-        {
-            temp[start] = arr[i];
-            i = i + 1;
+    int i, a, b;
+    a = l;
+    b = m + 1;
+
+    for (i = l; i <= r; i++) {
+        if (a <= m && b <= r) {
+            if (arr[a] < arr[b]) {
+                temp[i] = arr[a];
+                a += 1;
+            } else {
+                temp[i] = arr[b];
+                b += 1;
+            }
+        } else if (a <= m) {
+            temp[i] = arr[a];
+            a += 1;
+        } else if (b <= r) {
+            temp[i] = arr[b];
+            b += 1;
         }
-        else if (arr[j] < arr[i] && j <= r && i <= m)
-        {
-            temp[start] = arr[j];
-            j = j + 1;
-        }
-        else if (i > m)
-        {
-            temp[start] = arr[j];
-            j = j + 1;
-        }
-        else if (j > r)
-        {
-            temp[start] = arr[i];
-            i = i + 1;
-        }
-        
     }
     int k;
     for (k = l; k <= r; k++)
@@ -217,6 +200,9 @@ void merge_sort(int arr[], int temp[], int l, int r)
 
 void mergeSortIntegers(int *array, unsigned int size, int print)
 { // print is ignored for this one
+    if (size == 0) {
+        return;
+    }
     if (array == NULL)
     {
         exit(1);
