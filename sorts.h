@@ -188,13 +188,10 @@ void merge_sort(int arr[], int temp[], int l, int r)
     return;
    }
 
-   if (r > 1) {
-    int m = (l + r)/2;
+    int m = l + (r - l) / 2;
     merge_sort(arr, temp, l, m);
     merge_sort(arr, temp, m + 1, r);
     merge(arr, temp, l, m, r);
-   }
-   return;
 }
 
 // lab build, merge sort
