@@ -75,19 +75,22 @@ void insertionSortIntegers(int *array, unsigned int size, int print)
     if (size == 0) {
         return;
     }
-
     int i;
-
+    int j;
     for (i = 1; i < size; i++)
     {
-        int k;
-        for ( k = i; k >= 1; k--)
+        int tmp = array[i];
+        for ( j = i - 1; j >= -1; j--)
         {
-            if (array[k] < array[k-1])
+            if (array[i] < array[j] || j == -1)
             {
-                int temp = array[k];
-                array[k] = array[k-1];
-                array[k-1] = temp;
+                int k;
+                for (k = i; k > j + 1; k--) {
+                    array[k] = array[k - 1];
+                }
+
+                array[j + 1] = tmp;
+                break;
             }
         }
         
