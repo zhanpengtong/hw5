@@ -51,10 +51,11 @@ void selectionSortIntegers(int *array, unsigned int size, int print)
         int temp = array[i];
         array[i] = array[minIndex];
         array[minIndex] = temp;
+        if (print == 1) {
+            printIntArray(array, size);
+        }
     }
-    if (print == 1) {
-        printIntArray(array, size);
-    }
+    
 }
 
 /***  Code for Insertion Sort ***/
@@ -92,11 +93,11 @@ void insertionSortIntegers(int *array, unsigned int size, int print)
                 array[j + 1] = tmp;
                 break;
             }
+            if (print == 1) {
+                printIntArray(array, size);
+            }
         }
         
-        if (print == 1) {
-            printIntArray(array, size);
-        }
     }
  
 }
