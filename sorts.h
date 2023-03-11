@@ -47,16 +47,8 @@ void selectionSortIntegers(int *array, unsigned int size, int print)
     }
     int i;
     for (i = 0; i < size - 1; i++) {
-        int k;
-        for ( k = i; k >= 1; k--)
-        {
-            if (array[k] < array[k-1])
-            {
-                int temp = array[k];
-                array[k] = array[k-1];
-                array[k-1] = temp;
-            }
-        }
+        int min = findMinimum(array, i, size);
+        swap(&array[min], &array[i]);
         if (print == 1) {
             printIntArray(array, size);
         }
