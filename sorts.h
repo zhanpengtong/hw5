@@ -17,8 +17,9 @@ int findMinimum(int *array, int start, int stop)
     int minIndex = start;
     int i;
     for (i = start + 1; i < stop; i++){
-        if (array[i] < array[minIndex])
+        if (array[minIndex] <= array[i])
         {
+        } else{
             minIndex = i;
         }
         
