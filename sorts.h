@@ -43,12 +43,14 @@ void selectionSortIntegers(int *array, unsigned int size, int print)
     if (size == 0) {
         return;
     }
+    
     int i;
     for (i = 0; i < size - 1; i++) {
-        swap(&array[i], &array[findMinimum(array, i, size - 1)]);
-        if (print == 1) {
-            printIntArray(array, size);
-        }
+        int minIndex = findMinimum(array, i, size);
+        // Swap the smallest element with the first element in the unsorted part of the array
+        int temp = array[i];
+        array[i] = array[minIndex];
+        array[minIndex] = temp;
     }
     if (print == 1) {
         printIntArray(array, size);
@@ -73,22 +75,19 @@ void insertionSortIntegers(int *array, unsigned int size, int print)
     if (size == 0) {
         return;
     }
+
     int i;
-    int j;
+
     for (i = 1; i < size; i++)
     {
-        int tmp = array[i];
-        for ( j = i - 1; j >= -1; j--)
+        int k;
+        for ( k = i; k >= 1; k--)
         {
-            if (array[i] < array[j] || j == -1)
+            if (array[k] < array[k-1])
             {
-                int k;
-                for (k = i; k > j + 1; k--) {
-                    array[k] = array[k - 1];
-                }
-
-                array[j + 1] = tmp;
-                break;
+                int temp = array[k];
+                array[k] = array[k-1];
+                array[k-1] = temp;
             }
         }
         
@@ -189,11 +188,12 @@ void merge_sort(int arr[], int temp[], int l, int r)
     return;
    }
     if (r > 1){
-        int m = (r + l) / 2;
+        int m = (l + r) / 2;
         merge_sort(arr, temp, l, m);
         merge_sort(arr, temp, m + 1, r);
         merge(arr, temp, l, m, r);
     }
+    return;
 }
 
 // lab build, merge sort
