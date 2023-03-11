@@ -2,6 +2,7 @@
 #define SORTS_H
 
 #include <stdlib.h>
+#include <stdio.h>
 #include "sort_helper.h"
 
 /*** code for selection sort ****/
@@ -187,8 +188,7 @@ void merge_sort(int arr[], int temp[], int l, int r)
    if (arr == NULL){
     return;
    }
-
-    int m = l + (r - l) / 2;
+    int m = (r + l) / 2;
     merge_sort(arr, temp, l, m);
     merge_sort(arr, temp, m + 1, r);
     merge(arr, temp, l, m, r);
