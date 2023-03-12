@@ -31,6 +31,7 @@ Yes, that is a reasonable interpretation of the line chart. The direction of the
 ### 3. Big O
 Build another table that presents the best, worst, and average case for Bubble, Selection, Insertion, Merge, and Quick. You are free to use resources for this, but please reference them if you do. 
 
+![best, average, worst case](https://user-images.githubusercontent.com/113164203/224526879-32bcbe2f-b98f-489b-9899-d23e0af47aa2.png)
 
 Interview Kickstart. (n.d.). Time Complexities of All Sorting Algorithms. Retrieved from https://www.interviewkickstart.com/learn/time-complexities-of-all-sorting-algorithms
 
