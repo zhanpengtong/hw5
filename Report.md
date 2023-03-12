@@ -38,13 +38,24 @@ Interview Kickstart. (n.d.). Time Complexities of All Sorting Algorithms. Retrie
 #### 3.2 Worst Case
 Provide example of arrays that generate _worst_ case for Bubble, Selection, Insertion, Merge Sorts
 
+1. Bubble Sort: The worst case scenario for Bubble Sort is when the input array is in reverse order. For example, the array [5, 4, 3, 2, 1] is a worst case scenario for Bubble Sort.
+2. Selection Sort: The worst case scenario for Selection Sort is also when the input array is in reverse order. For example, the array [5, 4, 3, 2, 1] is a worst case scenario for Selection Sort.
+3. Insertion Sort: The worst case scenario for Insertion Sort is when the input array is in reverse order and each element must be moved all the way to the beginning of the array. For example, the array [5, 4, 3, 2, 1] is a worst case scenario for Insertion Sort.
+4. Merge Sort: The worst case scenario for Merge Sort is when the input array is already sorted in reverse order, which causes the merge step to perform the maximum number of comparisons. For example, the array [5, 4, 3, 2, 1] is a worst case scenario for Merge Sort.
 
 #### 3.3 Best Case
 Provide example of arrays that generate _best_ case for Bubble, Selection, Insertion, Merge Sorts 
 
+1. Bubble Sort: The best case scenario for Bubble Sort is when the input array is already sorted. For example, the array [1, 2, 3, 4, 5] is a best case scenario for Bubble Sort.
+2. Selection Sort: The best case scenario for Selection Sort is also when the input array is already sorted. For example, the array [1, 2, 3, 4, 5] is a best case scenario for Selection Sort.
+3. Insertion Sort: The best case scenario for Insertion Sort is when the input array is already sorted. For example, the array [1, 2, 3, 4, 5] is a best case scenario for Insertion Sort.
+4. Merge Sort: The best case scenario for Merge Sort is also when the input array is already sorted. For example, the array [1, 2, 3, 4, 5] is a best case scenario for Merge Sort.
 
 #### 3.4 Memory Considerations
 Order the various sorts based on which take up the most memory when sorting to the least memory. You may have to research this, and include the mathematical notation. 
+
+(Quick sort = Merge Sort) > (Bubble = Selection = Insertion)
+        O(n)                            O(1)
 
 ### 4. Growth of Functions
 Give the following values, place them correctly into *six* categories. Use the bullets, and feel free to cut and paste the full LatexMath we used to generate them.  
@@ -60,12 +71,24 @@ $2^n$
 $100n$  
 $2^{(n-1)}$
 #### Categories
-* 
-*
-*
-*
-*
-*
+
+*constant growth
+    $100$
+    $10000$
+*linear growth
+    $3n$
+    $100n$
+*logarithmic growth
+    $n\log_2n$
+*quadratic growth
+    $5n^2+5n$
+    $n^2$
+*exponential growth
+    $2^{n-1}$
+*factorial and exponential growth
+    $n!$
+    $2^n$
+
 
 ### 5. Growth of Function Language
 
