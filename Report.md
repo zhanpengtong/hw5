@@ -73,26 +73,26 @@ $2^{(n-1)}$
 #### Categories
 
 *constant growth
-    $100$
-    $10000$
+        $100$
+        $10000$
 
 *linear growth
-    $3n$
-    $100n$
+        $3n$
+        $100n$
 
 *logarithmic growth
-    $n\log_2n$
+        $n\log_2n$
 
 *quadratic growth
-    $5n^2+5n$
-    $n^2$
+        $5n^2+5n$
+        $n^2$
 
 *exponential growth
-    $2^{n-1}$
-    
+        $2^{n-1}$
+
 *factorial and exponential growth
-    $n!$
-    $2^n$
+        $n!$
+        $2^n$
 
 
 ### 5. Growth of Function Language
