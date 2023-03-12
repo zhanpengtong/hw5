@@ -115,20 +115,33 @@ Pair the following terms with the correct function in the table.
 ### 6. Stable vs Unstable
 Look up stability as it refers to sorting. In your own words, describe one sort that is stable and one sort that isn't stable  
 
+Stability in sorting refers to the preservation of the relative order of equal elements. A stable sorting algorithm maintains the original order of equal elements, while an unstable algorithm may change their order. The stable sorting algorithm preserves the original order of two numbers to be sorted when they are equal. Unstable sorting algorithm When two numbers to be sorted are equal, their order may change in the sorted output array.
 
 ### 6.2 When stability is needed?
 Explain in your own words a case in which you will want a stable algorithm over an unstable. Include an example. 
+
+For example, I have a report card that records students' names and grades, and I need to sort the grades first by subject (e.g. math, science, English) and then by the student's name in each subject. To ensure that students' grades match their names, this requires a robust sorting algorithm, as it preserves the order of students' grades in each subject. If an unstable sorting algorithm is used, it may reorder the grades for each subject, leading to incorrect results.
 
 ### 7. Gold Thief
 
 You are planning a heist to steal a rare coin that weighs 1.0001 ounces. The problem is that the rare coin was mixed with a bunch of counter fit coins. You know the counter fit coins only weight 1.0000 ounce each. There are in total 250 coins.  You have a simple balance scale where the coins can be weighed against each other. Hint: don't think about all the coins at once, but how you can break it up into even(ish) piles. 
 
+I will first divide the 250 coins into two piles of 125 coins each. Re-divide the heavy coins into two piles of 62 and one extra coin. If the weights of the two piles are equal, then the extra coin is what we are looking for. If not, then re-divide the heavy 62 coins into two piles of 31 coins each. Then take out the heavy pile of coins and re-divide into two piles of coins, each pile has 15 coins, and there is an extra coin. If the weights of the two piles are equal, then the extra coin is what we are looking for. If not then re-divide the heavy 15 coins into two piles of 7 coins and one extra coin. If the weights of the two piles are equal, then the extra coin is what we are looking for. If not then re-divide the heavy 7 coins into two piles of 3 coins and one extra coin. If the weights of the two piles are equal, then the extra coin is what we are looking for. If not then re-divide the heavy 3 coins into two piles of 1 coin and an extra coin. If the weights of the two piles are equal, then the extra coin is what we are looking for. If it's not that heavy that coin is what we're looking for.
+
 #### 7.1 Algorithm
 Describe an algorithm that will help you find the coin. We encourage you to use pseudo-code, but not required.
+
+1. Divide the 250 coins into two groups of approximately equal size, A and B.
+2. Weigh group A against group B on the balance scale.
+3. If the two groups weigh the same, then the rare coin must be in the remaining 125 coins. Go back to step 1 and repeat the     process with the remaining coins.
+4. If group A is heavier than group B, then the rare coin must be in group A. Go back to step 1 and repeat the process with group A.
+5. If group B is heavier than group A, then the rare coin must be in group B. Go back to step 1 and repeat the process with group B.
+
 
 #### 7.2 Time Complexity
 What is the average time complexity of your algorithm? 
 
+The time complexity of the algorithm is O(log2 n), where n is the number of coins. This is because the algorithm repeatedly divides the pile of coins into halves and only weighs one of the halves at each iteration. This is a binary search algorithm, and the time complexity of a binary search is logarithmic.
 
 
 <!-- links moved to bottom for easier reading in plain text (btw, this a comment that doesn't show in the webpage generated-->
