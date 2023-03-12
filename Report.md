@@ -19,6 +19,7 @@ Build a line chart using your favorite program. Your X axis will be N increasing
 
 Include the image in your markdown. As a reminder, you save the image in your repo, and use [image markdown].
 
+![Running Time Table](https://user-images.githubusercontent.com/113164203/224525235-a041d180-982d-49bd-9fdc-00577d412540.png)
 
 
 ### 2. Convinced?
