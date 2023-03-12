@@ -220,7 +220,7 @@ void mergeSortIntegers(int *array, unsigned int size, int print)
         return;
 
     int *temp = (int *)malloc(sizeof(int) * size); // make a temp empty array have same size with the array.
-    merge_sort(array, temp, 0, size - 1); give the array and temp to sort.
+    merge_sort(array, temp, 0, size - 1); // give the array and temp to sort.
     free(temp); // get the temp free.
 }
 
