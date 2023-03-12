@@ -14,13 +14,13 @@
 // Output: The index in an array of the minimum value between a range [start,stop]
 int findMinimum(int *array, int start, int stop)
 {
-    int minIndex = start;
+    int minIndex = start; // set a defalut min for begin, change it later.
     int i;
     for (i = start + 1; i < stop; i++){
         if (array[minIndex] <= array[i])
-        {
+        { //check the index if is the smaller one.
         } else{
-            minIndex = i;
+            minIndex = i; // if not will change it to the smaller one.
         }
         
     }
@@ -47,8 +47,8 @@ void selectionSortIntegers(int *array, unsigned int size, int print)
     }
     int i;
     for (i = 0; i < size - 1; i++) {
-        int min = findMinimum(array, i, size);
-        swap(&array[min], &array[i]);
+        int min = findMinimum(array, i, size); // use findMinimum method to find the min in current array index.
+        swap(&array[min], &array[i]); // swap the smaller one to the cueernt index.
         if (print == 1) {
             printIntArray(array, size);
         }
@@ -81,11 +81,13 @@ void insertionSortIntegers(int *array, unsigned int size, int print)
 
     for (i = 1; i < size; i++)
     {
+        // looking array form the begin to end.
         int k;
         for ( k = i; k >= 1; k--)
         {
             if (array[k] < array[k-1])
             {
+                //swap the index if current is smaller than front index.
                 int temp = array[k];
                 array[k] = array[k-1];
                 array[k-1] = temp;
@@ -115,10 +117,11 @@ void insertionSortIntegers(int *array, unsigned int size, int print)
 void bubbleSortIntegers(int *array, unsigned int size, int print)
 {
    int i, j;
+   // use i, j to make two for loop.
    for (i = 0; i < size - 1; i++) {
     for (j = 0; j < size - 1; j++) {
         if (array[j] > array[j + 1]) {
-            swap(&array[j], &array[j + 1]);
+            swap(&array[j], &array[j + 1]); // if the cueernt index is great than the after the current index.
         }
     }
 
@@ -149,6 +152,9 @@ void merge(int arr[], int temp[], int l, int m, int r)
     b = m + 1;
 
     for (i = l; i <= r; i++) {
+        // conbain two subarray(index beginng to mid, mid to end).
+        // put the small one frist in to temp[array].
+        // temp star with index l and end with r.
         if (a <= m && b <= r) {
             if (arr[a] < arr[b]) {
                 temp[i] = arr[a];
@@ -168,6 +174,7 @@ void merge(int arr[], int temp[], int l, int m, int r)
     int k;
     for (k = l; k <= r; k++)
     {
+        // use a for loop copy all the sort int from temp to the arr.
         arr[k] = temp[k];
     }
     
@@ -189,10 +196,11 @@ void merge_sort(int arr[], int temp[], int l, int r)
     return;
    }
     if (r > 1){
+        // make the cueern arr to two subarray.(cut form mid)
         int m = (l + r) / 2;
-        merge_sort(arr, temp, l, m);
-        merge_sort(arr, temp, m + 1, r);
-        merge(arr, temp, l, m, r);
+        merge_sort(arr, temp, l, m); // cut the first subarray to two subarray again.
+        merge_sort(arr, temp, m + 1, r); // cut the second subarray to two subarray.
+        merge(arr, temp, l, m, r); // put the arr to sort.
     }
     return;
 }
@@ -211,9 +219,9 @@ void mergeSortIntegers(int *array, unsigned int size, int print)
     if (size <= 1)
         return;
 
-    int *temp = (int *)malloc(sizeof(int) * size);
-    merge_sort(array, temp, 0, size - 1);
-    free(temp);
+    int *temp = (int *)malloc(sizeof(int) * size); // make a temp empty array have same size with the array.
+    merge_sort(array, temp, 0, size - 1); give the array and temp to sort.
+    free(temp); // get the temp free.
 }
 
 // provided code 
