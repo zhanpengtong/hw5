@@ -7,7 +7,8 @@ You are free to write a script to run the program and build your table (then cop
 
 ### Table
 
-![Screenshot 2023-03-11 at 7 21 35 PM](https://user-images.githubusercontent.com/113164203/224519803-5f75eb86-4057-4fc4-b038-e0bd0dca57d9.png)
+![Screenshot 2023-03-11 at 8 48 38 PM](https://user-images.githubusercontent.com/113164203/224519818-36bd95db-c881-49c8-961a-2cd7e1fa771e.png)
+
 
 
 
