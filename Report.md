@@ -25,10 +25,14 @@ Include the image in your markdown. As a reminder, you save the image in your re
 ### 2. Convinced?
 Given the direction of the line chart, are you "convinced" of the complexity of each of the sorts? Why or why not?
 
+Yes, that is a reasonable interpretation of the line chart. The direction of the lines does seem to align with the expected time complexity of each sorting algorithm, as defined by Big-O notation. Merge Sort and Quick Sort are expected to have a time complexity of O(nlogn), while Bubble Sort and Selection Sort have a time complexity of O(n^2).
+
 
 ### 3. Big O
 Build another table that presents the best, worst, and average case for Bubble, Selection, Insertion, Merge, and Quick. You are free to use resources for this, but please reference them if you do. 
 
+
+Interview Kickstart. (n.d.). Time Complexities of All Sorting Algorithms. Retrieved from https://www.interviewkickstart.com/learn/time-complexities-of-all-sorting-algorithms
 
 #### 3.2 Worst Case
 Provide example of arrays that generate _worst_ case for Bubble, Selection, Insertion, Merge Sorts
