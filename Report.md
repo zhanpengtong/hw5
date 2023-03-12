@@ -8,6 +8,8 @@ You are free to write a script to run the program and build your table (then cop
 ### Table
 | N | Bubble | Selection | Insertion | Merge | Quick |
 | :-- | :--: | :--: | :--: | :--: | :--: |
+![Screenshot 2023-03-11 at 7 21 35 PM](https://user-images.githubusercontent.com/113164203/224519750-fd691535-0764-406f-a52f-6d9fd9778ee7.png)
+
 
 
 ## BigO Analysis  / Questions
