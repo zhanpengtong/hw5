@@ -102,13 +102,13 @@ Pair the following terms with the correct function in the table.
 
 | Big $O$     |  Name  |
 | ------      | ------ |
-| $O(n^3)$    |  your answer here |
-| $O(1)$      |   |
-| $O(n)$      |   |
-| $O(\log_2n)$ |   |
-| $O(n^2)$    |   |
-| $O(n!)$     |   |
-| $O(2^n)$    |   |
+| $O(n^3)$    |  Cubic |
+| $O(1)$      | Constant  |
+| $O(n)$      | Linear  |
+| $O(\log_2n)$ | Logarithmic  |
+| $O(n^2)$    | Quadratic  |
+| $O(n!)$     | Factorial  |
+| $O(2^n)$    | Exponential  |
 
 
 
