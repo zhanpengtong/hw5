@@ -6,30 +6,8 @@ Make sure to go out to at least 100,000 (more are welcome), and you have 10 diff
 You are free to write a script to run the program and build your table (then copy that table built into the markdown). If you do that, please include the script into the repo.  Note: merge sort is going to be completed in the workshop for Module 06. You can start on it now, but welcome to wait.
 
 ### Table
-| N | Bubble | Selection | Insertion | Merge | Quick |
-| 10
-100
-1000
-5000
-10000
-50000
-100000
-125000
-150000
-175000
-200000
- | :0.000004
-0.000128
-0.010744
-0.165879
-0.581522
-11.686038
-45.60346
-71.042502
-103.138558
-142.975331
-185.912128![image](https://user-images.githubusercontent.com/113164203/224519780-6a946efb-d2bd-4bdc-8fbf-46afe514138a.png)
-: | :--: | :--: | :--: | :--: |
+
+![Screenshot 2023-03-11 at 7 21 35 PM](https://user-images.githubusercontent.com/113164203/224519803-5f75eb86-4057-4fc4-b038-e0bd0dca57d9.png)
 
 
 
