@@ -73,25 +73,25 @@ $2^{(n-1)}$
 #### Categories
 
 *constant growth
-        $100$
+        $100$ |
         $10000$
 
 *linear growth
-        $3n$
+        $3n$  |
         $100n$
 
 *logarithmic growth
         $n\log_2n$
 
 *quadratic growth
-        $5n^2+5n$
+        $5n^2+5n$  |
         $n^2$
 
 *exponential growth
         $2^{n-1}$
 
 *factorial and exponential growth
-        $n!$
+        $n!$  |
         $2^n$
 
 
